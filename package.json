@@ -1,6 +1,6 @@
 {
   "name": "@mariosimao/nodal-analysis-core",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Electric circuits nodal analysis",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
