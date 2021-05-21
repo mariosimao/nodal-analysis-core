@@ -106,7 +106,7 @@ export default class Circuit {
     return modifiedEquationSize;
   }
 
-  private frequency(): number {
+  public frequency(): number {
     let frequency = 0;
     this.components.forEach((c) => {
       if (c.source) {
