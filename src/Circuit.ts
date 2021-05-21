@@ -34,7 +34,7 @@ export default class Circuit {
     for (let i = 1; i <= originalEquationSize; i += 1) {
       results.push({
         type: 'Node',
-        name: `${i + 1}`,
+        name: `${i}`,
         unit: 'V',
         value: complex(0, 0),
       });
