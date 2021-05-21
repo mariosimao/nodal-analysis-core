@@ -7,7 +7,7 @@ interface NodalAnalysisResult {
   type: string,
   name: string,
   unit: string,
-  value: Complex,
+  value: object,
 }
 
 export default class Circuit {
@@ -73,7 +73,12 @@ export default class Circuit {
 
     let index = 0;
     voltageVector.forEach((vectorElement: Complex) => {
-      results[index].value = vectorElement;
+      results[index].value = {
+        re: vectorElement.re,
+        im: vectorElement.im,
+        r: vectorElement.toPolar().r,
+        phi: vectorElement.toPolar().phi,
+      };
       index += 1;
     });
 
