@@ -5,9 +5,9 @@ import Component from './Component';
 import CurrentControlledCurrentSource from './CurrentControlledCurrentSource';
 import CurrentControlledVoltageSource from './CurrentControlledVoltageSource';
 import CurrentSource from './CurrentSource';
-import IdealTransformer from './IdealTransformer';
 import Inductor from './Inductor';
 import OperationalAmplifier from './OperationalAmplifier';
+import RealTransformer from './RealTransformer';
 import Resistor from './Resistor';
 import VoltageControlledCurrentSource from './VoltageControlledCurrentSource';
 import VoltageControlledVoltageSource from './VoltageControlledVoltageSource';
@@ -108,13 +108,15 @@ export default class ComponentFactory {
           new Node(parseInt(values[4], 10)),
         );
       case 'K':
-        return new IdealTransformer(
+        return new RealTransformer(
           values[0],
           new Node(parseInt(values[1], 10)),
           new Node(parseInt(values[2], 10)),
-          new Node(parseInt(values[3], 10)),
+          parseFloat(values[3]),
           new Node(parseInt(values[4], 10)),
-          parseFloat(values[5]),
+          new Node(parseInt(values[5], 10)),
+          parseFloat(values[6]),
+          parseFloat(values[7]),
         );
       default:
         throw new Error(`Could not parse component: ${line}`);
